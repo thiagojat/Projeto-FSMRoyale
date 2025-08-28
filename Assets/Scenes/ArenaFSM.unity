@@ -343,7 +343,7 @@ GameObject:
   m_Component:
   - component: {fileID: 294169106}
   m_Layer: 0
-  m_Name: '=====Time B===== '
+  m_Name: '==========TEAM B========== '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -375,7 +375,7 @@ GameObject:
   m_Component:
   - component: {fileID: 329632793}
   m_Layer: 0
-  m_Name: =====Systems=====
+  m_Name: =========SYSTEM=========
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1378,7 +1378,7 @@ GameObject:
   - component: {fileID: 857982610}
   - component: {fileID: 857982609}
   m_Layer: 0
-  m_Name: Wall
+  m_Name: SideWallSouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1514,7 +1514,7 @@ GameObject:
   m_Component:
   - component: {fileID: 911880403}
   m_Layer: 0
-  m_Name: =====Time A=====
+  m_Name: ==========TEAM A==========
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1827,11 +1827,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cad93594fe29fd4094dc53b8b60278d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teamManager: {fileID: 0}
+  teamManager: {fileID: 669933787}
   currentHealth: 0
   targetLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   currentTarget: {fileID: 0}
 --- !u!1 &1419288689
 GameObject:
@@ -1846,7 +1846,7 @@ GameObject:
   - component: {fileID: 1419288691}
   - component: {fileID: 1419288690}
   m_Layer: 0
-  m_Name: Wall (1)
+  m_Name: SideWallNorth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2013,7 +2013,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1533632852}
   m_Layer: 0
-  m_Name: =====Scene=====
+  m_Name: ==========SCENE==========
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2131,7 +2131,7 @@ GameObject:
   - component: {fileID: 1658248236}
   - component: {fileID: 1658248235}
   m_Layer: 0
-  m_Name: Wall (3)
+  m_Name: SideWallWest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2239,7 +2239,7 @@ GameObject:
   - component: {fileID: 2042263843}
   - component: {fileID: 2042263842}
   m_Layer: 0
-  m_Name: Wall (2)
+  m_Name: SideWallEast
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2338,12 +2338,12 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 330585546}
-  - {fileID: 410087041}
-  - {fileID: 832575519}
   - {fileID: 329632793}
   - {fileID: 1429750465}
   - {fileID: 1533632852}
+  - {fileID: 330585546}
+  - {fileID: 410087041}
+  - {fileID: 832575519}
   - {fileID: 265640115}
   - {fileID: 857982612}
   - {fileID: 1419288693}

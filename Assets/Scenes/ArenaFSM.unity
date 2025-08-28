@@ -136,6 +136,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ae7da22f45cca645b907bfd45a47fd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  teamManager: {fileID: 669933787}
+  health: {fileID: 208951506}
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  enemyTower: {fileID: 0}
+  enemyUnit: {fileID: 0}
+--- !u!114 &208951506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208951500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77064865e8bbbd64bbea87521b973c3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 0
 --- !u!1001 &239781749
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -155,6 +175,10 @@ PrefabInstance:
     - target: {fileID: 6456200356952380600, guid: ae140492e0b695f4c9895a105f664602, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6456200356952380600, guid: ae140492e0b695f4c9895a105f664602, type: 3}
+      propertyPath: m_TagString
+      value: UnitB
       objectReference: {fileID: 0}
     - target: {fileID: 8452871321549998238, guid: ae140492e0b695f4c9895a105f664602, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -223,6 +247,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6456200356952380600, guid: ae140492e0b695f4c9895a105f664602, type: 3}
       insertIndex: -1
       addedObject: {fileID: 208951501}
+    - targetCorrespondingSourceObject: {fileID: 6456200356952380600, guid: ae140492e0b695f4c9895a105f664602, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 208951506}
   m_SourcePrefab: {fileID: 100100000, guid: ae140492e0b695f4c9895a105f664602, type: 3}
 --- !u!1 &265640111
 GameObject:
@@ -847,6 +874,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01c74fdea1fc99b4da78ebf9b10a255d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  teamManager: {fileID: 1352847157}
+  health: {fileID: 415672644}
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  enemyTower: {fileID: 0}
+  enemyUnit: {fileID: 0}
+--- !u!114 &415672644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415672638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77064865e8bbbd64bbea87521b973c3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 0
 --- !u!1 &472034522
 GameObject:
   m_ObjectHideFlags: 0
@@ -1036,8 +1083,16 @@ PrefabInstance:
       value: DestroyerA
       objectReference: {fileID: 0}
     - target: {fileID: 1351880880554633038, guid: 123635c55375e504c8ea3434d1ad0025, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1351880880554633038, guid: 123635c55375e504c8ea3434d1ad0025, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1351880880554633038, guid: 123635c55375e504c8ea3434d1ad0025, type: 3}
+      propertyPath: m_TagString
+      value: UnitA
       objectReference: {fileID: 0}
     - target: {fileID: 3343330193721345637, guid: 123635c55375e504c8ea3434d1ad0025, type: 3}
       propertyPath: m_PresetInfoIsWorld
@@ -1154,6 +1209,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1351880880554633038, guid: 123635c55375e504c8ea3434d1ad0025, type: 3}
       insertIndex: -1
       addedObject: {fileID: 642233888}
+    - targetCorrespondingSourceObject: {fileID: 1351880880554633038, guid: 123635c55375e504c8ea3434d1ad0025, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 642233894}
   m_SourcePrefab: {fileID: 100100000, guid: 123635c55375e504c8ea3434d1ad0025, type: 3}
 --- !u!1 &642233887 stripped
 GameObject:
@@ -1173,11 +1231,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teamManager: {fileID: 1352847157}
-  currentHealth: 0
+  health: {fileID: 642233894}
   targetLayer:
     serializedVersion: 2
     m_Bits: 128
   currentTarget: {fileID: 0}
+--- !u!114 &642233894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642233887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77064865e8bbbd64bbea87521b973c3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 0
 --- !u!1 &669933782
 GameObject:
   m_ObjectHideFlags: 0
@@ -1315,7 +1386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7ab6207ed897f74383fb8bf2913ccac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseCurrentHitPoints: 200
+  baseCurrentHitPoints: 0
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1556,6 +1627,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1351880880554633038, guid: 123635c55375e504c8ea3434d1ad0025, type: 3}
+      propertyPath: m_TagString
+      value: UnitB
+      objectReference: {fileID: 0}
     - target: {fileID: 3343330193721345637, guid: 123635c55375e504c8ea3434d1ad0025, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1
@@ -1671,6 +1746,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1351880880554633038, guid: 123635c55375e504c8ea3434d1ad0025, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1415404638}
+    - targetCorrespondingSourceObject: {fileID: 1351880880554633038, guid: 123635c55375e504c8ea3434d1ad0025, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1415404644}
   m_SourcePrefab: {fileID: 100100000, guid: 123635c55375e504c8ea3434d1ad0025, type: 3}
 --- !u!1 &1352847152
 GameObject:
@@ -1809,7 +1887,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14c27aa07e784034a8f5db1513086cbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseCurrentHitPoints: 200
+  baseCurrentHitPoints: 0
 --- !u!1 &1415404637 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1351880880554633038, guid: 123635c55375e504c8ea3434d1ad0025, type: 3}
@@ -1828,11 +1906,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teamManager: {fileID: 669933787}
-  currentHealth: 0
+  health: {fileID: 1415404644}
   targetLayer:
     serializedVersion: 2
     m_Bits: 64
   currentTarget: {fileID: 0}
+--- !u!114 &1415404644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1415404637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77064865e8bbbd64bbea87521b973c3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 0
 --- !u!1 &1419288689
 GameObject:
   m_ObjectHideFlags: 0
@@ -1981,6 +2072,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1429750465}
+  - component: {fileID: 1429750466}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2003,6 +2095,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1429750466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429750464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc63b83c11244dd408b901fffe4f8596, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1533632851
 GameObject:
   m_ObjectHideFlags: 0
@@ -2047,8 +2151,16 @@ PrefabInstance:
       value: FighterA
       objectReference: {fileID: 0}
     - target: {fileID: 6456200356952380600, guid: ae140492e0b695f4c9895a105f664602, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6456200356952380600, guid: ae140492e0b695f4c9895a105f664602, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6456200356952380600, guid: ae140492e0b695f4c9895a105f664602, type: 3}
+      propertyPath: m_TagString
+      value: UnitA
       objectReference: {fileID: 0}
     - target: {fileID: 8452871321549998238, guid: ae140492e0b695f4c9895a105f664602, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -2117,6 +2229,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6456200356952380600, guid: ae140492e0b695f4c9895a105f664602, type: 3}
       insertIndex: -1
       addedObject: {fileID: 415672639}
+    - targetCorrespondingSourceObject: {fileID: 6456200356952380600, guid: ae140492e0b695f4c9895a105f664602, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 415672644}
   m_SourcePrefab: {fileID: 100100000, guid: ae140492e0b695f4c9895a105f664602, type: 3}
 --- !u!1 &1658248234
 GameObject:

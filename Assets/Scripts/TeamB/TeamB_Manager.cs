@@ -21,13 +21,17 @@ public class TeamB_Manager : Team_Base
 
     private void Update()
     {
-        //Comportamento do Spawner
-        spawnerTimer = spawnerTimer - Time.deltaTime;
-
-        if (spawnerTimer <= 0)
+        //O LetsPlay é uma variável estática do Game_Manager que define se o jogo continua.
+        if (Game_Manager.LetsPlay)
         {
-            SpawnUnit();
-            spawnerTimer = unitSpawnTimer;
+            //Comportamento do Spawner
+            spawnerTimer = spawnerTimer - Time.deltaTime;
+
+            if (spawnerTimer <= 0)
+            {
+                SpawnUnit();
+                spawnerTimer = unitSpawnTimer;
+            }
         }
     }
 

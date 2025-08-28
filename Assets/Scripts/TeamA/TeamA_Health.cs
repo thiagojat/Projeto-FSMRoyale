@@ -3,14 +3,13 @@ using UnityEngine;
 public class TeamA_Health : Team_Base
 {
     //Variáveis relativas à Base
-    public int baseCurrentHitPoints = baseHitPoints;
+    public int baseCurrentHitPoints;
 
     void Start()
     {
-
+        baseCurrentHitPoints = baseHitPoints;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (baseCurrentHitPoints <= 0)
@@ -26,6 +25,7 @@ public class TeamA_Health : Team_Base
 
     public void GameOver()
     {
+        Game_Manager.EndGame("TeamB");
         Destroy(gameObject);
     }
 }

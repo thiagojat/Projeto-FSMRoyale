@@ -6,10 +6,10 @@ TagManager:
   tags:
   - TowerA
   - TowerB
-  - EnemyA
-  - EnemyB
   - SpawnerA
   - SpawnerB
+  - UnitA
+  - UnitB
   layers:
   - Default
   - TransparentFX

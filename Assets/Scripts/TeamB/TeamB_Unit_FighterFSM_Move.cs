@@ -16,4 +16,9 @@ public class TeamB_Unit_FighterFSM_Move : Unit_Abstract<TeamB_Unit_FighterManage
     {
 
     }
+
+    public override void OnDrawGizmos(TeamB_Unit_FighterManager p_manager)
+    {
+
+    }
 }

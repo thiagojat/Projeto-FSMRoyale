@@ -60,4 +60,9 @@ public class TeamB_Unit_DestroyerManager : MonoBehaviour
     //        SwitchState(DeathState);
     //    }
     //}
+
+    private void OnDrawGizmos()
+    {
+        currentState.OnDrawGizmos(this);
+    }
 }

@@ -9,11 +9,16 @@ public class TeamA_Unit_DestroyerFSM_Move : Unit_Abstract<TeamA_Unit_DestroyerMa
 
     public override void UpdateState(TeamA_Unit_DestroyerManager manager)
     {
-   
+        
     }
     public override void ExitState(TeamA_Unit_DestroyerManager manager)
     {
 
     }
+
+    public override void OnDrawGizmos(TeamA_Unit_DestroyerManager p_manager)
+    {
+    }
+
 
 }

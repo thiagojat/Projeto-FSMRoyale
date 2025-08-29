@@ -16,4 +16,8 @@ public class TeamB_Unit_DestroyerFSM_Attack : Unit_Abstract<TeamB_Unit_Destroyer
     {
 
     }
+
+    public override void OnDrawGizmos(TeamB_Unit_DestroyerManager p_manager)
+    {
+    }
 }

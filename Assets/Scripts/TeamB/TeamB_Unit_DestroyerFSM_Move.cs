@@ -4,16 +4,23 @@ public class TeamB_Unit_DestroyerFSM_Move : Unit_Abstract<TeamB_Unit_DestroyerMa
 {
     public override void EnterState(TeamB_Unit_DestroyerManager manager)
     {
-
+        
     }
 
     public override void UpdateState(TeamB_Unit_DestroyerManager manager)
     {
-
+        manager.transform.position = Vector3.MoveTowards(manager.transform.position, manager.currentTarget.position, Team_Base.destroyerMoveSpeed * Time.deltaTime);
+        Debug.Log("moving");
     }
 
     public override void ExitState(TeamB_Unit_DestroyerManager manager)
     {
 
+    }
+
+    public override void OnDrawGizmos(TeamB_Unit_DestroyerManager p_manager)
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(p_manager.transform.position, p_manager.transform.forward * Team_Base.destroyerSearchRay);
     }
 }

@@ -35,7 +35,5 @@ public class TeamB_Unit_DestroyerFSM_Search : Unit_Abstract<TeamB_Unit_Destroyer
 
     public override void OnDrawGizmos(TeamB_Unit_DestroyerManager p_manager)
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(p_manager.transform.position, p_manager.transform.forward * Team_Base.destroyerSearchRay);
     }
 }

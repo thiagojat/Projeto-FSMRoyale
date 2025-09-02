@@ -10,6 +10,8 @@ public class TeamA_Unit_FighterFSM_Attack : Unit_Abstract<TeamA_Unit_FighterMana
 
     public override void UpdateState(TeamA_Unit_FighterManager p_manager)
     {
+        CheckDistanceToUnit(p_manager);
+
         if (p_manager.enemyUnit != null)
         {
             AttackUnit(p_manager);
@@ -24,6 +26,14 @@ public class TeamA_Unit_FighterFSM_Attack : Unit_Abstract<TeamA_Unit_FighterMana
 
         p_manager.SwitchState(p_manager.MoveState);
 
+    }
+    void CheckDistanceToUnit(TeamA_Unit_FighterManager p_manager)
+    {
+        if (p_manager.enemyUnit == null) return;
+
+        float distance = Vector3.Distance(p_manager.transform.position, p_manager.enemyUnit.transform.position);
+
+        if (distance > Team_Base.fighterSearchRay) p_manager.enemyUnit = null;
     }
 
     Coroutine l_attackWait;

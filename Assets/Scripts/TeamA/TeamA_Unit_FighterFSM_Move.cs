@@ -27,7 +27,7 @@ public class TeamA_Unit_FighterFSM_Move : Unit_Abstract<TeamA_Unit_FighterManage
     {
         float distance = Vector3.Distance(manager.transform.position, manager.enemyUnit.transform.position);
 
-        if (distance <= Team_Base.fighterAttackRange)
+        if (distance <= Team_Base.fighterSearchRay)
             manager.SwitchState(manager.AttackState);
     }
 
@@ -35,7 +35,7 @@ public class TeamA_Unit_FighterFSM_Move : Unit_Abstract<TeamA_Unit_FighterManage
     {
         float distance = Vector3.Distance(manager.transform.position, manager.enemyTower.position);
 
-        if (distance <= Team_Base.fighterAttackRange)
+        if (distance <= Team_Base.fighterSearchRay)
             manager.SwitchState(manager.AttackState);
     }
 

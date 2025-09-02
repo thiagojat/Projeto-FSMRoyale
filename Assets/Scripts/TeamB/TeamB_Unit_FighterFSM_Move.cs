@@ -4,7 +4,7 @@ public class TeamB_Unit_FighterFSM_Move : Unit_Abstract<TeamB_Unit_FighterManage
 {
     public override void EnterState(TeamB_Unit_FighterManager manager)
     {
-
+        if (manager.debug) Debug.Log("EnterState MOVE");
     }
 
     public override void UpdateState(TeamB_Unit_FighterManager manager)
@@ -27,7 +27,7 @@ public class TeamB_Unit_FighterFSM_Move : Unit_Abstract<TeamB_Unit_FighterManage
     {
         float distance = Vector3.Distance(manager.transform.position, manager.enemyUnit.transform.position);
 
-        if (distance <= Team_Base.fighterAttackRange)
+        if (distance <= Team_Base.fighterSearchRay)
             manager.SwitchState(manager.AttackState);
     }
 
@@ -35,7 +35,7 @@ public class TeamB_Unit_FighterFSM_Move : Unit_Abstract<TeamB_Unit_FighterManage
     {
         float distance = Vector3.Distance(manager.transform.position, manager.enemyTower.position);
 
-        if (distance <= Team_Base.fighterAttackRange)
+        if (distance <= Team_Base.fighterSearchRay)
             manager.SwitchState(manager.AttackState);
     }
 
@@ -73,7 +73,7 @@ public class TeamB_Unit_FighterFSM_Move : Unit_Abstract<TeamB_Unit_FighterManage
 
     public override void OnDrawGizmos(TeamB_Unit_FighterManager p_manager)
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(p_manager.transform.position, p_manager.transform.forward * Team_Base.fighterSearchRay);
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(p_manager.transform.position, Team_Base.fighterSearchRay);
     }
 }

@@ -16,7 +16,7 @@ public class TeamB_Unit_FighterManager : MonoBehaviour
     public GameObject enemyUnit;
 
     Unit_Abstract<TeamB_Unit_FighterManager> currentState;
-
+    public bool debug;
     void Start()
     {
         gameObject.SetActive(true);
@@ -42,6 +42,11 @@ public class TeamB_Unit_FighterManager : MonoBehaviour
     public void OnDeath()
     {
         SwitchState(DeathState);
+    }
+
+    private void OnDrawGizmos()
+    {
+        currentState.OnDrawGizmos(this);
     }
 
     //Criei um método OnDeath. Este método será passado como parâmetro para a classe de health.

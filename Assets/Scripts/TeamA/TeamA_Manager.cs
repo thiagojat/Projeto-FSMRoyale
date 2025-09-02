@@ -49,13 +49,13 @@ public class TeamA_Manager : Team_Base
         {
             prefabToSpawn = destroyerPrefab;
             lastSpawned = 1;
-            Debug.Log("Instanciei Destroyer A!!");
+            //Debug.Log("Instanciei Destroyer A!!");
         }
         else
         {
             prefabToSpawn = fighterPrefab;
             lastSpawned = 0;
-            Debug.Log("Instanciei Fighter A!!");
+            //Debug.Log("Instanciei Fighter A!!");
         }
 
         var newUnit = Instantiate(prefabToSpawn, spawnPosition, spawnRotation);

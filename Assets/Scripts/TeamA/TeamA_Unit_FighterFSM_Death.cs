@@ -4,7 +4,7 @@ public class TeamA_Unit_FighterFSM_Death : Unit_Abstract<TeamA_Unit_FighterManag
 {
     public override void EnterState(TeamA_Unit_FighterManager manager)
     {
-
+        Object.Destroy(manager.gameObject);
     }
 
     public override void UpdateState(TeamA_Unit_FighterManager manager)

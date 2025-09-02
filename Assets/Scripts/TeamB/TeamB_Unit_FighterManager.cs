@@ -15,8 +15,6 @@ public class TeamB_Unit_FighterManager : MonoBehaviour
     public Transform enemyTower;
     public GameObject enemyUnit;
 
-
-
     Unit_Abstract<TeamB_Unit_FighterManager> currentState;
 
     void Start()

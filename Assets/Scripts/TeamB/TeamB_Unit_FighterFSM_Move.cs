@@ -33,6 +33,8 @@ public class TeamB_Unit_FighterFSM_Move : Unit_Abstract<TeamB_Unit_FighterManage
 
     void CheckDistanceTower(TeamB_Unit_FighterManager manager)
     {
+        if (manager.enemyTower == null) return;
+
         float distance = Vector3.Distance(manager.transform.position, manager.enemyTower.position);
 
         if (distance <= Team_Base.fighterSearchRay)
@@ -45,16 +47,15 @@ public class TeamB_Unit_FighterFSM_Move : Unit_Abstract<TeamB_Unit_FighterManage
     }
 
     RaycastHit[] l_raycastHits;
-    Transform l_foundTower, l_foundUnit;
-    void Track(TeamB_Unit_FighterManager p_manager)
+    Transform l_foundUnit;
+    void Track(TeamB_Unit_FighterManager manager)
     {
-        l_raycastHits = Physics.RaycastAll(p_manager.transform.position, p_manager.transform.forward, Team_Base.fighterSearchRay, p_manager.targetLayer);
+        l_raycastHits = Physics.SphereCastAll(manager.transform.position, Team_Base.fighterSearchRay, manager.transform.forward, 0f, manager.targetLayer);
 
-        l_foundTower = null;
         l_foundUnit = null;
         for (int i = 0; i < l_raycastHits.Length; i++)
         {
-            if (l_raycastHits[i].collider.CompareTag("TowerA")) l_foundTower = l_raycastHits[i].collider.transform;
+            if (l_raycastHits[i].collider.CompareTag("TowerA")) continue;
 
             if (l_raycastHits[i].collider.CompareTag("UnitA"))
             {
@@ -65,11 +66,10 @@ public class TeamB_Unit_FighterFSM_Move : Unit_Abstract<TeamB_Unit_FighterManage
 
         if (l_foundUnit)
         {
-            p_manager.enemyUnit = l_foundUnit.gameObject;
+            manager.enemyUnit = l_foundUnit.gameObject;
             return;
         }
     }
-
 
     public override void OnDrawGizmos(TeamB_Unit_FighterManager p_manager)
     {

@@ -13,32 +13,32 @@ public class TeamB_Unit_FighterFSM_Attack : Unit_Abstract<TeamB_Unit_FighterMana
 
     }
 
-    public override void UpdateState(TeamB_Unit_FighterManager p_manager)
+    public override void UpdateState(TeamB_Unit_FighterManager manager)
     {
-        CheckDistanceToUnit(p_manager);
+        CheckDistanceToUnit(manager);
 
-        if(p_manager.enemyUnit != null)
+        if(manager.enemyUnit != null)
         {
-            AttackUnit(p_manager);
+            AttackUnit(manager);
             return;
         }
 
-        if(Vector3.Distance(p_manager.enemyTower.transform.position, p_manager.transform.position) <= Team_Base.fighterAttackRange)
+        if(Vector3.Distance(manager.enemyTower.transform.position, manager.transform.position) <= Team_Base.fighterAttackRange)
         {
-            AttackTower(p_manager);
+            AttackTower(manager);
             return;
         }
 
-        p_manager.SwitchState(p_manager.MoveState);
+        manager.SwitchState(manager.MoveState);
     }
 
-    void CheckDistanceToUnit(TeamB_Unit_FighterManager p_manager)
+    void CheckDistanceToUnit(TeamB_Unit_FighterManager manager)
     {
-        if (p_manager.enemyUnit == null) return;
+        if (manager.enemyUnit == null) return;
 
-        float distance = Vector3.Distance(p_manager.transform.position, p_manager.enemyUnit.transform.position);
+        float distance = Vector3.Distance(manager.transform.position, manager.enemyUnit.transform.position);
 
-        if (distance > Team_Base.fighterSearchRay) p_manager.enemyUnit = null;
+        if (distance > Team_Base.fighterSearchRay) manager.enemyUnit = null;
     }
 
     Coroutine l_attackWait;

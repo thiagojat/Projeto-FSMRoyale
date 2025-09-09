@@ -17,7 +17,7 @@ public class TeamB_Unit_FighterFSM_Move : Unit_Abstract<TeamB_Unit_FighterManage
             return;
         }
 
-        manager.transform.position = Vector3.MoveTowards(manager.transform.position, manager.enemyTower.position, Team_Base.fighterMoveSpeed * Time.timeScale);
+        manager.transform.position = Vector3.MoveTowards(manager.transform.position, manager.enemyTower.position, Team_Base.fighterMoveSpeed);
         CheckDistanceTower(manager);
 
         Track(manager);
@@ -27,7 +27,7 @@ public class TeamB_Unit_FighterFSM_Move : Unit_Abstract<TeamB_Unit_FighterManage
     {
         float distance = Vector3.Distance(manager.transform.position, manager.enemyUnit.transform.position);
 
-        if (distance <= Team_Base.fighterSearchRay)
+        if (distance <= Team_Base.fighterAttackRange)
             manager.SwitchState(manager.AttackState);
     }
 
@@ -37,7 +37,7 @@ public class TeamB_Unit_FighterFSM_Move : Unit_Abstract<TeamB_Unit_FighterManage
 
         float distance = Vector3.Distance(manager.transform.position, manager.enemyTower.position);
 
-        if (distance <= Team_Base.fighterSearchRay)
+        if (distance <= Team_Base.fighterAttackRange)
             manager.SwitchState(manager.AttackState);
     }
 

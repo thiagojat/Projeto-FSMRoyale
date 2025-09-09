@@ -18,7 +18,9 @@ public class TeamB_Unit_DestroyerFSM_Attack : Unit_Abstract<TeamB_Unit_Destroyer
     {
         if (!m_canAttack) return;
 
-        manager.currentTarget.GetComponent<TeamA_Health>().TakeDamage(Team_Base.destroyerAttackDamage);
+        if (manager.currentTarget.TryGetComponent(out TeamA_Health teamAHealth))
+            teamAHealth.TakeDamage(Team_Base.destroyerAttackDamage);
+        else return;
 
         l_attackWait = manager.StartCoroutine(AttackWait());
     }

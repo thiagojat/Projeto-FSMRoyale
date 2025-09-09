@@ -46,16 +46,19 @@ public class TeamB_Unit_FighterFSM_Attack : Unit_Abstract<TeamB_Unit_FighterMana
     {
         if (!m_canAttack) return;
 
-        manager.enemyTower.GetComponent<TeamA_Health>().TakeDamage(Team_Base.fighterAttackDamage);
+        if (manager.enemyTower != null && manager.enemyTower.TryGetComponent(out TeamA_Health teamAHealth))
+        {
+            teamAHealth.TakeDamage(Team_Base.fighterAttackDamage);
 
-        l_attackWait = manager.StartCoroutine(AttackWait());
+            l_attackWait = manager.StartCoroutine(AttackWait());
+        }
     }
 
     void AttackUnit(TeamB_Unit_FighterManager manager)
     {
-        if (manager.enemyUnit != null && m_canAttack)
+        if (manager.enemyUnit != null && m_canAttack && manager.enemyUnit.TryGetComponent(out Unit_Health unitHealth))
         {
-            manager.enemyUnit.GetComponent<Unit_Health>().TakeDamage(Team_Base.fighterAttackDamage);
+            unitHealth.TakeDamage(Team_Base.fighterAttackDamage);
 
             l_attackWait = manager.StartCoroutine(AttackWait());
             return;

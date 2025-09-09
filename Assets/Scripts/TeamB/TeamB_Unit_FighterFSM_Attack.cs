@@ -71,10 +71,4 @@ public class TeamB_Unit_FighterFSM_Attack : Unit_Abstract<TeamB_Unit_FighterMana
         yield return new WaitForSeconds(Team_Base.fighterAttackInterval);
         l_attackWait = null;
     }
-
-    public override void OnDrawGizmos(TeamB_Unit_FighterManager p_manager)
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(p_manager.transform.position, Team_Base.fighterAttackRange);
-    }
 }

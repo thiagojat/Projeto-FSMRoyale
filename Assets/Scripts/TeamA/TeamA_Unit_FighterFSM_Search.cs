@@ -31,9 +31,4 @@ public class TeamA_Unit_FighterFSM_Search : Unit_Abstract<TeamA_Unit_FighterMana
             }
         }
     }
-
-    public override void OnDrawGizmos(TeamA_Unit_FighterManager p_manager)
-    {
-    }
-
 }

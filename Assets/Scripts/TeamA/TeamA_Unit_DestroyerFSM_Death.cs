@@ -16,10 +16,4 @@ public class TeamA_Unit_DestroyerFSM_Death : Unit_Abstract<TeamA_Unit_DestroyerM
     {
 
     }
-
-    public override void OnDrawGizmos(TeamA_Unit_DestroyerManager p_manager)
-    {
-    }
-
-
 }

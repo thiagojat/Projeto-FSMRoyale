@@ -32,9 +32,4 @@ public class TeamA_Unit_DestroyerFSM_Search : Unit_Abstract<TeamA_Unit_Destroyer
         }
 
     }
-
-    public override void OnDrawGizmos(TeamA_Unit_DestroyerManager p_manager)
-    {
-    }
-
 }

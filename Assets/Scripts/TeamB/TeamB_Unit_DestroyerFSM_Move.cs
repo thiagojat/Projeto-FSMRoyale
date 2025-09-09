@@ -27,10 +27,4 @@ public class TeamB_Unit_DestroyerFSM_Move : Unit_Abstract<TeamB_Unit_DestroyerMa
     {
 
     }
-
-    public override void OnDrawGizmos(TeamB_Unit_DestroyerManager p_manager)
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(p_manager.transform.position, Team_Base.destroyerAttackRange);
-    }
 }

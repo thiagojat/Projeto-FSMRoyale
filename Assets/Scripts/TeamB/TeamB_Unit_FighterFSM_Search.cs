@@ -31,10 +31,4 @@ public class TeamB_Unit_FighterFSM_Search : Unit_Abstract<TeamB_Unit_FighterMana
             }
         }
     }
-
-    public override void OnDrawGizmos(TeamB_Unit_FighterManager p_manager)
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(p_manager.transform.position, p_manager.transform.forward * Team_Base.fighterSearchRay);
-    }
 }

@@ -44,11 +44,6 @@ public class TeamB_Unit_FighterManager : MonoBehaviour
         SwitchState(DeathState);
     }
 
-    private void OnDrawGizmos()
-    {
-        currentState.OnDrawGizmos(this);
-    }
-
     //Criei um método OnDeath. Este método será passado como parâmetro para a classe de health.
     //Quando a vida acabar, dentro do script do health, ele irá invocar o OnDeath() do manager.
     //Desta forma conseguimos mudar o estado concreto a partir do Manager da unidade através do health.

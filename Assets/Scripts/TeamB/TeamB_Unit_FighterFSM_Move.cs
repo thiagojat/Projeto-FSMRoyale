@@ -11,7 +11,7 @@ public class TeamB_Unit_FighterFSM_Move : Unit_Abstract<TeamB_Unit_FighterManage
     {
         if (manager.enemyUnit != null)
         {
-            manager.transform.position = Vector3.MoveTowards(manager.transform.position, manager.enemyUnit.transform.position, Team_Base.fighterMoveSpeed * Time.timeScale);
+            manager.transform.position = Vector3.MoveTowards(manager.transform.position, manager.enemyUnit.transform.position, Team_Base.fighterMoveSpeed);
 
             CheckDistanceUnit(manager);
             return;

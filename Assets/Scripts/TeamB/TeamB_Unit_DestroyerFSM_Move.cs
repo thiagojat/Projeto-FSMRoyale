@@ -9,7 +9,7 @@ public class TeamB_Unit_DestroyerFSM_Move : Unit_Abstract<TeamB_Unit_DestroyerMa
 
     public override void UpdateState(TeamB_Unit_DestroyerManager manager)
     {
-        manager.transform.position = Vector3.MoveTowards(manager.transform.position, manager.currentTarget.position, Team_Base.destroyerMoveSpeed* Time.timeScale);
+        manager.transform.position = Vector3.MoveTowards(manager.transform.position, manager.currentTarget.position, Team_Base.destroyerMoveSpeed);
 
         CheckDistance(manager);
     }
